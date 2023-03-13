@@ -28,28 +28,39 @@ namespace Midterm_1{
 
                               double h3 = 0;
                               double w3 = 0;
-                              double a = 0;
+
+                              if(isfromtop){
+                                        h3 = top1 - bottom2;
+                              } else if(isfrombottom){
+                                        h3 = top2 - bottom1;
+                              } else {
+                                        if(top1 - bottom1 > top2 - bottom2){
+                                                  h3 = h2*2;
+                                        } else {
+                                                  h3 = h1*2;
+                                        }
+                              }
+
+                              if(isfromright){
+                                        w3 = right1 - left2;
+                              } else if(isfromleft){
+                                        w3 = right2 - left1;
+                              } else {
+                                        if(right1 - left1 > right2 - left1){
+                                                  w3 = w2*2;
+                              } else {
+                                        w3 = w1*2;
+                              }
+                              }
+
+                              double a = w3 * h3;;
 
                               if((isfromtop || isfrombottom) && (isfromright || isfromleft)){
-                                        if(isfromtop){
-                                                  h3 = top1 - bottom2;
-                                        } else if(isfrombottom){
-                                                  h3 = top2 - bottom1;
-                                        }
-
-                                        if(isfromright){
-                                                  w3 = right1 - left2;
-                                        } else if(isfromleft){
-                                                  w3 = right2 - left1;
-                                        }
-
-                                        a = w3 * h3;
                                         if(a > 8){
                                                   Console.WriteLine("Too Much Overlapping");
                                         } else {
                                                   Console.WriteLine("Not Much Overlapping");
                                         }
-                                                  
                               } else {
                                         Console.WriteLine("No overlapping");
                               }
