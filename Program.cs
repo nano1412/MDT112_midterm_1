@@ -14,20 +14,20 @@ namespace Midterm_1{
                               double h2 = double.Parse(Console.ReadLine());
 
                               //edge variable
-                              double top1 =       y1 + h1;
-                              double bottom1 =    y1 - h1;
-                              double left1 =      x1 - w1;
-                              double right1 =     x1 + w1;
-                              double top2 =       y2 + h2;
-                              double bottom2 =    y2 - h2;
-                              double left2 =      x2 - w2;
-                              double right2 =     x2 + w2;
+                              double top1 =    y1 + h1;
+                              double bottom1 = y1 - h1;
+                              double left1 =   x1 - w1;
+                              double right1 =  x1 + w1;
+                              double top2 =    y2 + h2;
+                              double bottom2 = y2 - h2;
+                              double left2 =   x2 - w2;
+                              double right2 =  x2 + w2;
 
                               //is intersect variable
-                              bool isfromtop = top1 > bottom2 && top1 < top2;
-                              bool isfromright = right1 > left2 && right1 < right2;
+                              bool isfromtop =    top1 > bottom2 && top1 < top2;
                               bool isfrombottom = top2 > bottom1 && top2 < top1;
-                              bool isfromleft = right2 > left1 && right2 < right1;
+                              bool isfromright =  right1 > left2 && right1 < right2;
+                              bool isfromleft =   right2 > left1 && right2 < right1;
 
                               //intersect case variable
                               double h3 = 0;
