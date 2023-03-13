@@ -38,25 +38,13 @@ namespace Midterm_1{
                                         h3 = top1 - bottom2;
                               } else if(isfrombottom){
                                         h3 = top2 - bottom1;
-                              } else {
-                                        if(top1 - bottom1 > top2 - bottom2){ //in case poster intersect from the edge or go through from top to bottom
-                                                  h3 = h2*2;
-                                        } else {
-                                                  h3 = h1*2;
-                                        }
-                              }
+                              } 
 
                               if(isfromright){
                                         w3 = right1 - left2;
                               } else if(isfromleft){
                                         w3 = right2 - left1;
-                              } else {
-                                        if(right1 - left1 > right2 - left1){ //in case poster intersect from the edge or go through from left to right
-                                                  w3 = w2*2;
-                              } else {
-                                        w3 = w1*2;
-                              }
-                              }
+                              } 
 
                               //calculate area
                               double a = w3 * h3;;
