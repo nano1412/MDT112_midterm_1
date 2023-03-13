@@ -3,6 +3,7 @@
 namespace Midterm_1{
           class Program{
                     static void Main(string[] args){
+                              //input variable
                               double x1 = double.Parse(Console.ReadLine());
                               double y1 = double.Parse(Console.ReadLine());
                               double w1 = double.Parse(Console.ReadLine());
@@ -12,6 +13,7 @@ namespace Midterm_1{
                               double w2 = double.Parse(Console.ReadLine());
                               double h2 = double.Parse(Console.ReadLine());
 
+                              //edge variable
                               double top1 =       y1 + h1;
                               double bottom1 =    y1 - h1;
                               double left1 =      x1 - w1;
@@ -21,20 +23,23 @@ namespace Midterm_1{
                               double left2 =      x2 - w2;
                               double right2 =     x2 + w2;
 
+                              //is intersect variable
                               bool isfromtop = top1 > bottom2 && top1 < top2;
                               bool isfromright = right1 > left2 && right1 < right2;
                               bool isfrombottom = top2 > bottom1 && top2 < top1;
                               bool isfromleft = right2 > left1 && right2 < right1;
 
+                              //intersect case variable
                               double h3 = 0;
                               double w3 = 0;
 
+                              //find h and w of area
                               if(isfromtop){
                                         h3 = top1 - bottom2;
                               } else if(isfrombottom){
                                         h3 = top2 - bottom1;
                               } else {
-                                        if(top1 - bottom1 > top2 - bottom2){
+                                        if(top1 - bottom1 > top2 - bottom2){ //in case poster intersect from the edge or go through from top to bottom
                                                   h3 = h2*2;
                                         } else {
                                                   h3 = h1*2;
@@ -46,15 +51,17 @@ namespace Midterm_1{
                               } else if(isfromleft){
                                         w3 = right2 - left1;
                               } else {
-                                        if(right1 - left1 > right2 - left1){
+                                        if(right1 - left1 > right2 - left1){ //in case poster intersect from the edge or go through from left to right
                                                   w3 = w2*2;
                               } else {
                                         w3 = w1*2;
                               }
                               }
 
+                              //calculate area
                               double a = w3 * h3;;
 
+                              //output
                               if((isfromtop || isfrombottom) && (isfromright || isfromleft)){
                                         if(a > 8){
                                                   Console.WriteLine("Too Much Overlapping");
